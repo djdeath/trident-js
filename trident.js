@@ -1419,3 +1419,42 @@ setPulseRate = function(pulseMsDelay) {
   timerCallbackId = setInterval(globalTimerCallback.bind(), 20);
 }
 
+
+//
+
+exports.Timeline = Timeline;
+exports.TimelineState = TimelineState;
+exports.TimelineScenario = TimelineScenario;
+exports.TimelineScenarioState = TimelineScenarioState;
+exports.TimelineRepeatBehavior = RepeatBehavior;
+exports.EasingFunctions = {
+    LinearEase: LinearEase,
+    SineEase: SineEase,
+    QuadraticEaseIn: QuadraticEaseIn,
+    QuadraticEaseOut: QuadraticEaseOut,
+    QuadraticEaseInOut: QuadraticEaseInOut,
+    CubicEaseIn: CubicEaseIn,
+    CubicEaseOut: CubicEaseOut,
+    CubicEaseInOut: CubicEaseInOut,
+    QuarticEaseIn: QuarticEaseIn,
+    QuarticEaseOut: QuarticEaseOut,
+    QuarticEaseInOut: QuarticEaseInOut,
+    SinusoidalEaseIn: SinusoidalEaseIn,
+    SinusoidalEaseOut: SinusoidalEaseOut,
+    SinusoidalEaseInOut: SinusoidalEaseInOut,
+    ExponentialEaseIn: ExponentialEaseIn,
+    ExponentialEaseOut: ExponentialEaseOut,
+    ExponentialEaseInOut: ExponentialEaseInOut,
+    CircularEaseIn: CircularEaseIn,
+    CircularEaseOut: CircularEaseOut,
+    CircularEaseInOut: CircularEaseInOut,
+    ElasticEaseIn: ElasticEaseIn,
+    ElasticEaseOut: ElasticEaseOut,
+    ElasticEaseInOut: ElasticEaseInOut,
+    BackEaseIn: BackEaseIn,
+    BackEaseOut: BackEaseOut,
+    BackEaseInOut: BackEaseInOut,
+    BounceEaseIn: BounceEaseIn,
+    BounceEaseOut: BounceEaseOut,
+    BounceEaseInOut: BounceEaseInOut,
+};
