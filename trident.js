@@ -1264,13 +1264,6 @@ function TimelineScenario() {
 var runningTimelines = {};
 var runningScenarios = {};
 
-var timerCallbackId = setInterval("globalTimerCallback()", 40);
-
-setPulseRate = function(pulseMsDelay) {
-  clearInterval(timerCallbackId);
-  timerCallbackId = setInterval("globalTimerCallback()", 20);
-}
-
 globalTimerCallback = function() {
   var currTime = new Date().getTime();
   var passedSinceLastIteration = currTime - lastTime;
@@ -1418,3 +1411,11 @@ globalTimerCallback = function() {
  // document.title = liveScenarios + " live scenario(s) out of " + totalScenarios;
   lastTime = currTime;
 }
+
+var timerCallbackId = setInterval(globalTimerCallback.bind(), 40);
+
+setPulseRate = function(pulseMsDelay) {
+  clearInterval(timerCallbackId);
+  timerCallbackId = setInterval(globalTimerCallback.bind(), 20);
+}
+
