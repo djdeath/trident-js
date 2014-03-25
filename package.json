@@ -1,0 +1,16 @@
+{
+  "name": "trident-js",
+  "version": "0.0.1",
+  "description": "Javascript animation framework",
+  "keywords": [
+  ],
+  "author": "",
+  "dependencies": {},
+  "devDependencies": {
+  },
+  "main": "trident.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djdeath/trident-js.git"
+  }
+}
