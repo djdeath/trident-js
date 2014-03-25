@@ -838,7 +838,7 @@ function Timeline(mainObject) {
   }
   
   this.play = function() {
-    this.playSkipping(false, 0);
+    this.playSkipping(0);
   }
 
   this.playSkipping = function(msToSkip) {
