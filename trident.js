@@ -698,13 +698,12 @@ function Timeline(mainObject) {
   this.duration = 500;
   this.timeUntilPlay = 0;
   this.initialDelay = 0;
-  this.isLooping = false;
   this.timelinePosition = 0;
   this.toCancelAtCycleBreak = false;
   this.ease = new LinearEase();
 
   this.cycleDelay = 0;
-  this.repeatCount = -1;
+  this.repeatCount = 0;
   this.repeatBehavior;
   this.doneCount = 0;
 
@@ -846,12 +845,10 @@ function Timeline(mainObject) {
     if ((this.initialDelay + this.duration) < msToSkip) {
       throw new IllegalArgumentException("Required skip longer than initial delay + duration");
     }
-    this.isLooping = false;
     this.__play(false, msToSkip);
   }
 
   this.replay = function() {
-    this.isLooping = false;
     this.__play(true, 0);
   }
 
@@ -904,12 +901,10 @@ function Timeline(mainObject) {
     if ((this.initialDelay + this.duration) < msToSkip) {
       throw "Required skip longer than initial delay + duration";
     }
-    this.isLooping = false;
     this.__playReverse(false, msToSkip);
   }
 
   this.replayReverse = function() {
-    this.isLooping = false;
     this.__playReverse(true, 0);
   }
 
@@ -941,7 +936,6 @@ function Timeline(mainObject) {
     if ((this.initialDelay + this.duration) < msToSkip) {
       throw "Required skip longer than initial delay + duration";
     }
-    this.isLooping = true;
     this.repeatCount = loopCount;
     this.repeatBehavior = repeatBehavior;
     this.__playLoop(msToSkip);
@@ -1316,7 +1310,7 @@ globalTimerCallback = function() {
       if (timeline.durationFraction > 1) {
         timeline.durationFraction = 1;
         timeline.timelinePosition = 1;
-        if (timeline.isLooping) {
+        if (timeline.repeatCount > 0) {
           var stopLoopingAnimation = timeline.toCancelAtCycleBreak;
           var loopsToLive = timeline.repeatCount;
           if (loopsToLive > 0) {
@@ -1363,7 +1357,7 @@ globalTimerCallback = function() {
       if (timeline.durationFraction < 0) {
         timeline.durationFraction = 0;
         timeline.timelinePosition = 0;
-        if (timeline.isLooping) {
+        if (timeline.repeatCount > 0) {
           var stopLoopingAnimation = timeline.toCancelAtCycleBreak;
           var loopsToLive = timeline.repeatCount;
           if (loopsToLive > 0) {
