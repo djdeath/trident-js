@@ -48,7 +48,7 @@ var TimelineState = {"IDLE":"IDLE", "READY":"READY",
 var TimelineScenarioState = {"IDLE":"IDLE", "PLAYING":"PLAYING", 
   "SUSPENDED":"SUSPENDED", "DONE":"DONE"};
 
-var RepeatBehavior = {"LOOP":"LOOP", "REVERSE":"REVERSE"};
+var RepeatBehavior = {"NORMAL":"NORMAL", "REVERSE":"REVERSE"};
 
 /**
  * Interpolators
