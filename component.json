@@ -1,0 +1,15 @@
+{
+    "name": "trident-js",
+    "version": "0.0.1",
+    "description": "Javascript animation framework",
+    "author": "",
+    "repo": "djdeath/trident-js",
+    "dependencies": {
+    },
+    "scripts": [
+      "trident.js"
+    ],
+    "json": [
+      "component.json"
+    ]
+}
