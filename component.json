@@ -6,6 +6,7 @@
     "repo": "djdeath/trident-js",
     "dependencies": {
     },
+    "main": "trident.js",
     "scripts": [
       "trident.js"
     ],
