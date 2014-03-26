@@ -1303,7 +1303,7 @@ globalTimerCallback = function() {
       if (timeline.durationFraction > 1) {
         timeline.durationFraction = 1;
         timeline.timelinePosition = 1;
-        if (timeline.repeatCount > 0) {
+        if (timeline.repeatCount != 0) {
           var stopLoopingAnimation = timeline.toCancelAtCycleBreak;
           var loopsToLive = timeline.repeatCount;
           if (loopsToLive > 0) {
@@ -1350,7 +1350,7 @@ globalTimerCallback = function() {
       if (timeline.durationFraction < 0) {
         timeline.durationFraction = 0;
         timeline.timelinePosition = 0;
-        if (timeline.repeatCount > 0) {
+        if (timeline.repeatCount != 0) {
           var stopLoopingAnimation = timeline.toCancelAtCycleBreak;
           var loopsToLive = timeline.repeatCount;
           if (loopsToLive > 0) {
